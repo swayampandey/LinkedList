@@ -5,7 +5,7 @@ public class LinkedList<T> {
 	Node<T> tail;
 	
 	public void insert(T data) {
-		Node<T> node = new Node<T>(data);
+		Node<T> node = new Node<>(data);
 		if(head == null) {
 			head = node;
 			tail = node;
@@ -13,6 +13,18 @@ public class LinkedList<T> {
 		else {
 			node.next = head;
 			head = node;
+		}
+	}
+	
+	public void append(T data) {
+		Node<T> node = new Node<>(data);
+		if(head == null) {
+			head = node;
+			tail = node;
+		}
+		else {
+			tail.next =node;
+			tail = node;
 		}
 	}
 	
